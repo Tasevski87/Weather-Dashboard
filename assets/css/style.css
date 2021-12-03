@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+.hero{
+    padding-top: 20px;
+    font-size: 20px;
+    background-color: blue;
+    color: white;
+    font-family: sans-serif;    
+}
+.title{
+margin-left: 500px;
+}
+.city{
+    font-family: sans-serif;
+}
+.form-label,
+.form-input,
+form.textarea {
+    display: block;
+}
+.form-label {
+    font-size: 1.1rem;
+    margin: 0 0 0 5px;
+}
+.form-input {
+    padding: 1%;
+    margin: 5px 0;
+    font-size: 1.2rem;
+    border: 2px solid;
+}
+.btn {
+    font-size: 1.3rem;
+    display: block;
+    margin: 5px 0;
+    width: 240px;
+    background-color:violet;
+    color: white;
+}
+.btn:hover{
+    cursor: pointer;
+}
