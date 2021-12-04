@@ -4,33 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
 
-<body class="column">
-    <header class="hero">
-        <h1 class="title">Weather Dashboard
+<body>
+    <header class="hero bg-primary p-3 mb-2 ">
+        <h1 class="title text-xl-center">Weather Dashboard
         </h1>
     </header>
-    <main class="flex-row justify-space-between">
 
-        <div class="container">
+    <div class="container row">
 
-            <h2 class="city">Search for a City:</h2>
-
-            <form id="user-form" class="card-body">
-                <label class="form-label" for="city"></label>
-                <input name="city" id="city" type="text" autofocus="true" class="form-input" />
-                <button type="submit" class="btn">Search</button>
-            </form>
-
-
+        <div class="city-search">
+            <div class="col-4">
+                <p class="city my-3">Search for a City:</p>
+                <div class="city-name">
+                    <input id="city" type="text" class="form-input" placeholder="Enter city name">
+                    <div class="input-append">
+                        <button type="submit" class="btn" id="search">Search
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-    </main>
+        <div class="city-info row col-8 >
+            <div class=" row mr-0">
+            <div class="col-12 border border-dark m-3 rounded">
 
+                <div class="col-8">
+                    <div class="city-info">
+                        <p id="City">City:</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-8">
+                            <p id="temperature">Temperature:
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <p id="wind">Wind:
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <p id="humid">Humidity:
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 d-flex">
+                            <p id="uv">Uv index:
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="forecast">
+                    <h3>5 Day Forecast</h3>
+                </div>
+            </div>
+            <div class="row col-12">
+                <div class="day-1 col bg-primary text-whie ml-3 rounded">day1</div>
+                <div class="day-2 col bg-primary text-whie ml-3 rounded">day2</div>
+                <div class="day-3 col bg-primary text-whie ml-3 rounded">day3</div>
+                <div class="day-4 col bg-primary text-whie ml-3 rounded">day4</div>
+                <div class="day-5 col bg-primary text-whie ml-3 rounded">day5</div>
+            </div>
+
+        </div>
+    </div>
+    </div>
 </body>
 
 </html>
