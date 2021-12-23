@@ -21,11 +21,14 @@
 
         <div class="city-search">
             <div class="col-4">
+                
                 <p class="city my-3">Search for a City:</p>
                 <div class="city-name">
+
                     <input id="city" type="text" class="form-input" placeholder="Enter city name">
                     <div class="input-append">
-                        <button type="submit" class="btn" id="search">Search
+
+                        <button type="submit" class="btn" id="button">Search
                         </button>
                     </div>
                 </div>
@@ -43,7 +46,7 @@
 
                     <div class="row">
                         <div class="col-8">
-                            <p id="temperature">Temperature:
+                            <p id="temperature">Temp:
                             </p>
                         </div>
                     </div>
@@ -72,17 +75,15 @@
                     <h3>5 Day Forecast</h3>
                 </div>
             </div>
-            <div class="row col-12">
-                <div class="day-1 col bg-primary text-whie ml-3 rounded">day1</div>
-                <div class="day-2 col bg-primary text-whie ml-3 rounded">day2</div>
-                <div class="day-3 col bg-primary text-whie ml-3 rounded">day3</div>
-                <div class="day-4 col bg-primary text-whie ml-3 rounded">day4</div>
-                <div class="day-5 col bg-primary text-whie ml-3 rounded">day5</div>
+            <div id='five-day-container' class="row">
+                <!-- <div class="day-1 col bg-primary text-whie ml-3 rounded">day1</div> -->
+                
             </div>
 
         </div>
     </div>
     </div>
 </body>
-
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+<script src="./assets/js/sript.js"></script>
 </html>
