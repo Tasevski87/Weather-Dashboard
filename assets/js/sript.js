@@ -9,18 +9,47 @@ document.querySelector('#button').addEventListener('click', function () {
     saveHistory(city)
 })
 
-
+// save  searched citys to local storage
 function saveHistory(city) {
-    // save  searched citys to local storage
-    localStorage.setItem('city', JSON.stringify(city));
-    getHistory(city)
+
+    var storage = JSON.parse(localStorage.getItem('city'));
+    if (storage === null) {
+        storage = []
+    }
+    storage.push(city)
+
+    localStorage.setItem('city', JSON.stringify(storage));
+    console.log(city)
+    getHistory()
 }
 
+//gettin history from local storage
+getHistory()
+function getHistory() {
+    var history = document.querySelector('.history')
+    // get item from local storage - array of strings
+    var storage = JSON.parse(localStorage.getItem('city'));
+    // if storage is empty tell us no history 
+    if (storage === null) {
+        history.textContent = 'No History'
 
-    // loop through storage and for each item in local storage  create a button with the id and the textContet to be equal to the value in storage
-    // add event listener to each button
-    // getCity(event.target.id)
+    }
+    //loop through the storage
+    else {
+        history.textContent = ''
+        for (var i = 0; i < storage.length; i++) {
+            //create a button with the city from our storage
+            var btn = document.createElement('button')
+            btn.textContent = storage[i]
+            history.append(btn)
+            // with click of a button open the city info
+            btn.addEventListener('click', function (event) {
+                getCity(event.target.textContent)
+            })
+        }
+    }
 
+}
 
 
 //with api we are finding the city we  are looking for 
@@ -44,6 +73,7 @@ function getCity(city) {
 
 //with the lat and lon we are fetching the parametars for the next 5 days 
 function getFiveDay(lat, lon) {
+    fiveDay.textContent = ''
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=8b9ea86a571caec946a75119c52563ed&units=imperial`)
         .then(res => res.json())
         .then(data => {
@@ -55,11 +85,11 @@ function getFiveDay(lat, lon) {
                 var card = document.createElement('div')
                 card.setAttribute('class', `day-${i + 1} col bg-primary text-whie ml-3 rounded`)
                 fiveDay.append(card)
-                //we use moment.js to findt the curent day of the week so 
+                //we use moment.js to findt the curent day of the week so and created the element h2 where we append moment.js info
                 var weekDay = document.createElement('h2')
                 weekDay.textContent = moment().add(i + 1, 'days').format('dddd')
                 card.prepend(weekDay)
-
+                // we created elemnt p where we append data
                 var fiveDayTemp = document.createElement('p')
                 fiveDayTemp.textContent = 'Temp: ' + data.daily[i].temp.day + ' F'
                 card.append(fiveDayTemp)
