@@ -80,15 +80,20 @@ function getFiveDay(lat, lon) {
             console.log(data);
             document.getElementById('uv').textContent = 'Uv index: ' + data.current.uvi
 
+        
+
             for (var i = 0; i < 5; i++) {
+                
                 //dynamicly we are creating cards with the parametars for the folowing 5 days 
                 var card = document.createElement('div')
                 card.setAttribute('class', `day-${i + 1} col bg-primary text-whie ml-3 rounded`)
                 fiveDay.append(card)
+
                 //we use moment.js to findt the curent day of the week so and created the element h2 where we append moment.js info
                 var weekDay = document.createElement('h2')
                 weekDay.textContent = moment().add(i + 1, 'days').format('dddd')
                 card.prepend(weekDay)
+
                 // we created elemnt p where we append data
                 var fiveDayTemp = document.createElement('p')
                 fiveDayTemp.textContent = 'Temp: ' + data.daily[i].temp.day + ' F'
@@ -101,7 +106,6 @@ function getFiveDay(lat, lon) {
                 fiveDayHumidity = document.createElement('p')
                 fiveDayHumidity.textContent = 'Humidity: ' + data.daily[i].humidity + ' %'
                 card.append(fiveDayHumidity)
-
             }
         })
 }
