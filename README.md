@@ -11,5 +11,6 @@
   ![Weather Dashboard](https://user-images.githubusercontent.com/91975394/147694395-3c9d615b-285c-47e6-9a5a-ed510e43626f.gif)
 
 ## Github Repo Link
-
+https://github.com/Tasevski87/Weather-Dashboard
 ## Github Pages URL
+https://tasevski87.github.io/Weather-Dashboard/
